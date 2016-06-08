@@ -10,7 +10,8 @@ COPY ./angular /var/www/angular
 
 WORKDIR /var/www/angular
 RUN tsd install angular2 es6-promise rx rx-lite
-webpack build
+RUN npm install
+RUN webpack
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
